@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.puzzle-control button {
+  width: 89px;
+  height: 43px;
+  border-radius: 10px;
+}
+
+.puzzle-box {
+  background: #f7f0ca;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 6px;
+  border-radius: 4px;
+}
+
+.puzzle-piece {
+  background: linear-gradient(to bottom, #ffe259, #ffa751);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
