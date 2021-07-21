@@ -25,18 +25,14 @@ function getPosition(e) {
     window.getComputedStyle(emptyBox).gridColumn.slice(0, 1)
   );
 
-  console.log(clickRow, clickColumn);
-  console.log(emptyRow, emptyColumn);
-  console.log(clickRow === emptyRow - 1 && clickColumn === emptyColumn);
-
   if (clickRow === emptyRow - 1 && clickColumn === emptyColumn) {
     changePosition(e, emptyBox, emptyRow, emptyColumn, clickRow, clickColumn);
   } else if (clickRow === emptyRow + 1 && clickColumn === emptyColumn) {
-    changePosition(e, emptyBox);
+    changePosition(e, emptyBox, emptyRow, emptyColumn, clickRow, clickColumn);
   } else if (clickRow === emptyRow && clickColumn === emptyColumn - 1) {
-    changePosition(e, emptyBox);
-  } else if (clickRow === emptyRow && clickColumn === emptyColumn - 1) {
-    changePosition(e, emptyBox);
+    changePosition(e, emptyBox, emptyRow, emptyColumn, clickRow, clickColumn);
+  } else if (clickRow === emptyRow && clickColumn === emptyColumn + 1) {
+    changePosition(e, emptyBox, emptyRow, emptyColumn, clickRow, clickColumn);
   }
 }
 
