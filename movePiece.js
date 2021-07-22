@@ -1,10 +1,13 @@
+const span = controlBox.querySelector("span");
+
 function changePosition(e, emptyBox, eR, eC, cR, cC) {
-  console.log("active");
-  console.log(eR, eC, cR, cC);
+  li[eR - 1].splice(eC - 1, 1, Number(e.target.innerText));
+  li[cR - 1].splice(cC - 1, 1, "");
   e.target.style.gridRow = eR;
   e.target.style.gridColumn = eC;
   emptyBox.style.gridRow = cR;
   emptyBox.style.gridColumn = cC;
+  console.log(li);
 }
 
 function getPosition(e) {
@@ -36,8 +39,11 @@ function getPosition(e) {
   }
 }
 
-puzzleList.forEach((elm) => {
-  elm.addEventListener("click", (e) => {
-    getPosition(e);
+function init() {
+  puzzleList.forEach((elm) => {
+    elm.addEventListener("click", (e) => {
+      getPosition(e);
+    });
   });
-});
+}
+init();
