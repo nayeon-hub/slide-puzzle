@@ -2,9 +2,15 @@ const controlBox = document.querySelector(".puzzle-control");
 const startBtn = controlBox.querySelector("button");
 const puzzleList = document.querySelectorAll(".puzzle-piece");
 
+const answer = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, ""],
+];
 let li = [];
 
 function madeQus() {
+  li = []; //중간에 다시 start를 누르는 경우를 대비한 초기화
   while (li.length < 8) {
     const n = Math.floor(Math.random() * 8) + 1;
     const check = li.indexOf(n);
