@@ -1,5 +1,27 @@
 const span = controlBox.querySelector("span");
 
+function checkAnswer() {
+  let check = true;
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      if (li[i][j] !== answer[i][j]) {
+        check = false;
+        break;
+      }
+    }
+    if (check === false) {
+      break;
+    }
+  }
+
+  if (check === false) {
+    span.innerHTML = "";
+  } else {
+    span.innerHTML = "Success";
+  }
+}
+
 function changePosition(e, emptyBox, eR, eC, cR, cC) {
   li[eR - 1].splice(eC - 1, 1, Number(e.target.innerText));
   li[cR - 1].splice(cC - 1, 1, "");
@@ -43,6 +65,7 @@ function init() {
   puzzleList.forEach((elm) => {
     elm.addEventListener("click", (e) => {
       getPosition(e);
+      checkAnswer();
     });
   });
 }
