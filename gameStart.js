@@ -1,3 +1,5 @@
+let a = null;
+
 function allReset() {
   puzzleList.forEach((elm, indx) => {
     if (!elm.classList[1]) {
@@ -35,6 +37,8 @@ function gameStart(e) {
       checkAnswer();
     });
   });
+  console.log("end");
+  console.log((a += 1));
 }
 
 function init() {
