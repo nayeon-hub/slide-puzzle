@@ -34,12 +34,3 @@ function showPuzzle(p) {
     }
   }
 }
-
-function gameStart() {
-  console.log("game start!");
-  const puzzle = madeQus();
-  showPuzzle(puzzle);
-  console.log(li);
-}
-
-startBtn.addEventListener("click", gameStart);
