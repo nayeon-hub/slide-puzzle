@@ -46,3 +46,5 @@ function init() {
 }
 
 init();
+
+//새로 로딩..캐싱!!
